@@ -49,7 +49,7 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
     Une fois l'installation terminée on observera sur virtualbox l'ensemble des DC et SRV appraître sous cette forme :
 
-    ![Alt text](Photo_SAECLOUDCYBER\VirtualBox.png)
+    <img src="Photo_SAECLOUDCYBER\VirtualBox.png">
 
 * ### <u><b> Proxmox </b></u>
 
@@ -57,7 +57,7 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
 Le support utilisé pour la répartition des tâches a été trello, il permet d'organiser et de gérer visuellement et facilement le projet. Voici une photo exemple de notre projet : 
 
-![Alt text](Photo_SAECLOUDCYBER\Trello.png)
+<img src="Photo_SAECLOUDCYBER\Trello.png">
 
 Vous pouvez retrouver le Trello de notre groupe en cliquant sur ce lien ce mot **[Yojuma](https://trello.com/invite/b/7TZ5XEJ0/ATTI6f183bf588a9821f81585e399a62ff8dED5283D7/yojuma34500)**
 
@@ -111,7 +111,7 @@ Exemple de fichier de log de la machine "MEEREN" :
 
 ⭐ Vous pouvez retrouver notre compte rendu sur OpenWEC ainsi qu'un fichier de log sur notre github au chemin suivant :
 
-:octocat: Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
 
 * **Compte Rendu** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ OPENWEC ➔ SAE_OPENWEC_INSTALL.pdf
 
@@ -119,7 +119,7 @@ Exemple de fichier de log de la machine "MEEREN" :
 
 ## <b><u>VIII/ Splunk</u></b>
 
-Au cours de cette SAE on a pu découvrir Splunk, c'est une plateforme qui va permettre d'obtenir des informations sur d'innnombrables sources de données. Dans notre cas Splunk va avoir un peu la même utilisateur que Wazuh et Elastic.
+Au cours de cette SAE on a pu découvrir Splunk, c'est une plateforme qui va permettre d'obtenir des informations sur d'innnombrables sources de données. Dans notre cas Splunk va avoir un peu la même utilisateur que Wazuh et Elastic. <br/>
 Une des particularité de Splunk c'est qu'il faut obligatoirement créer un compte pour pouvoir télécharger le paquet pour installer le serveur et le forwarder côté client. L'installation reste simple, elle est accompagnée d'un assistant pour facilité cette dernière. Une fois installer, le serveur est accessible sur le port 8000. Sur le serveur pour pouvoir écouter les clients, on va venir créer un receveur sur le port 9997 (par défaut). Maintenant côté client il s'agit d'un exécutable où il va falloir préciser l'adresse IP du serveur ainsi que les ports par défaut notamment celui du receveur 9997. Le forwarder ne suffit pas à recevoir les informations des clients windows, il faut également télécharger un addon et modifier un fichier de configuration pour enfin pour observer l'apparition de nos agents. En voici un exemple :
 
 <img src="Photo_SAECLOUDCYBER\clientsplunk.png"> 
@@ -130,7 +130,7 @@ L'installation et la configuration est très simple mais demande un petit temps 
 
 ⭐ Vous pouvez retrouver notre compte rendu sur Splunk ainsi qu'un fichier de log et un fichier .evtx sur notre github au chemin suivant :
 
-:octocat: Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
 
 * **Compte Rendu** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ SPLUNK ➔ SAE_INSTALL_SPLUNK.pdf
 
@@ -139,6 +139,48 @@ L'installation et la configuration est très simple mais demande un petit temps 
 * **Fichier evtx** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ SPLUNK ➔ sysmon_log.evtx
 
 ## <b><u>IX/ Auditd - Chainsaw - Hayabusa</u></b>
+
+1. <u><b>Auditd</u></b>
+
+Auditd permet d'implémenter ce qu'on appel des "hooks" ou appels système, qui permettent de surveiller les processus en mode utilisateur et générer des événements d'audit dans le cas où ils correspondent à la politique de sécurité définie sur le système. Dans notre cas pour la SAE l'utilisation de autid sur Linux à seulement permis de faire la surveillance du fichier "/etc/passwd" en ajoutant une régle dans le fichier de rules de auditd, vous pouvez retrouver une image de la configuration du fichier ci-dessous :
+
+<img src="Photo_SAECLOUDCYBER\auditd.png"> 
+
+Pour les logs, auditd remonte les logs dans le fichier "/var/log/audit/audit.log".
+
+2. <u><b>Audit - Windows</u></b>
+
+Pour ce qui est de la partie audit sur les clients Windows, on a pu réaliser la configuration de ce dernier pour qu'il surveille les fichiers de log de notre choix notamment le fichier de log de Splunk. L'application **Event Viewer** nous permettra de voir la remonter des logs :
+
+<img src="Photo_SAECLOUDCYBER\log_audit.png"> 
+
+3. <u><b>Chainsaw</u></b>
+
+Chainsaw permet de visualiser et analyser les fichiers de logs qu'on génére au format .evtx, il va examnier et comprendre les journaux qu'on a généré. Dans notre cas on va réutiliser le fichier .evtx téléchargé après l'installation de Splunk pour réaliser simplement une chasse global et avoir une analyse global de nos logs :
+
+<img src="Photo_SAECLOUDCYBER\chainsaw.png"> 
+
+Voici l'exemple d'une détection réalisé par chainsaw où il nous remonte qu'il a détecté un changement de configuration de sysmon. On a pas pu l'utiliser plus en profondeur par manque de temps mais également par manque de fichier exploitable au format .evtx.
+
+4. <u><b>Hayabusa</u></b>
+
+Hayabusa a un peu la même utilité que Chainsaw il va nous permettre de faire de l'analyse de log, toujours au même format mais sous d'autres manières. Il va permettre notamment de faire l'analyse des événements par leurs ID :
+
+<img src="Photo_SAECLOUDCYBER\hayabusa.png"> 
+
+Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temps et par manque de fichier.
+
+⭐ Vous pouvez retrouver notre compte rendu sur Splunk ainsi qu'un fichier de log et un fichier .evtx sur notre github au chemin suivant :
+
+🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+
+* **Compte Rendu** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ AUDITD-CHAINSAW ➔ AUDITD-CHAINSAW.pdf
+
+* **Fichier de log** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ AUDITD-CHAINSAW ➔ audit.log
+
+* **Fichier Chasse Chainsaw** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ AUDITD-CHAINSAW ➔ chainsaw_hunt_global.out
+
+* **Fichier Hayabusa** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ AUDITD-CHAINSAW ➔ hayabusa_sysmon.out
 
 ## <b><u>X/ Attaques</u></b>
 
