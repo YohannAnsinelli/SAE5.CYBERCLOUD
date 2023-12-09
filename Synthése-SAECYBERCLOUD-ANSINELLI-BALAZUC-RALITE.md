@@ -49,7 +49,7 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
     Une fois l'installation terminée on observera sur virtualbox l'ensemble des DC et SRV appraître sous cette forme :
 
-    <img src="Photo_SAECLOUDCYBER\VirtualBox.png">
+    ![Alt text](Photo_SAECLOUDCYBER\VirtualBox.png)
 
 * ### <u><b> Proxmox </b></u>
 
@@ -57,7 +57,7 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
 Le support utilisé pour la répartition des tâches a été trello, il permet d'organiser et de gérer visuellement et facilement le projet. Voici une photo exemple de notre projet : 
 
-<img src="Photo_SAECLOUDCYBER\Trello.png">
+![Alt text](Photo_SAECLOUDCYBER\Trello.png)
 
 Vous pouvez retrouver le Trello de notre groupe en cliquant sur ce lien ce mot **[Yojuma](https://trello.com/invite/b/7TZ5XEJ0/ATTI6f183bf588a9821f81585e399a62ff8dED5283D7/yojuma34500)**
 
@@ -72,7 +72,7 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 |<center>Elastic VirtualBox</center>       |    Yohann - Justin   |       |       |
 |<center>Elastic Proxmox</center>       |   Mathéo    |       |       |
 |<center>Wazuh</center>       |   Yohann - Justin    |    8h   |       |
-|<center>OpenWEC</center>       |   Yohann    |   24h    |       |
+|<center>OpenWEC</center>       |   Yohann    |   24h    |   Déploiement du serveur + client OpenWEC pour le DC03 / Beaucoup de problèmes avant de parvenir à réussir.    |
 |<center>BloodHound</center>       |   Justin    |       |       |
 |<center>Splunk</center>       |   Yohann    |   8h    |       |
 |<center>Chainsaw - Hayabusa</center>       |   Yohann    |    4h   |   Installation + Chasse globale + Répartion des différents events par ID / Pas de difficultés particulières de rencontrées, mais un manque de temps pour pouvoir mieux manipuler les outils.    |
@@ -96,13 +96,61 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 
 ## <b><u>VII/ OpenWEC</u></b>
 
+OpenWEC est une implémentation gratuite et opensource d'un serveur Windows Event Collector. Il va permettre de collecter les journaux d'événements Windows à partir d'une machine Linux sans avoir besoin d'un agent local tiers exécuté sur les machines Windows. Il va être composé de choses :
+
+* **openwecd** qui est le serveur OpenWEC.
+* **openwec** qui est utilisé pour gérer le serveur OpenWEC.
+
+Dans notre groupe c'est Yohann qui s'est chargé de la configuration de OpenWEC. Il y a passé environ 24 heures suite à de nombreux problèmes rencontrés. Le principal problème de OpenWEC et son fonctionnement avec Kerberos qui peut parfois nous causer quelques soucis, de plus le DC01 à eu un problème de "computers" qui ne remontait pas, par conséquent il a fallu faire la configuration premièrement sur le DC03. Au bilan OpenWEC a réussit à fonctionner et nous a permis de détecter les machines du DC03 et de pouvoir accèder à leurs logs :
+
+<img src="Photo_SAECLOUDCYBER\OpenWECstats.png">
+
+Exemple de fichier de log de la machine "MEEREN" :
+
+<img src="Photo_SAECLOUDCYBER\LogMEEREN.png">
+
+⭐ Vous pouvez retrouver notre compte rendu sur OpenWEC ainsi qu'un fichier de log sur notre github au chemin suivant :
+
+:octocat: Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+
+* **Compte Rendu** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ OPENWEC ➔ SAE_OPENWEC_INSTALL.pdf
+
+* **Fichier de log** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ OPENWEC ➔ openwec_logs
+
 ## <b><u>VIII/ Splunk</u></b>
+
+Au cours de cette SAE on a pu découvrir Splunk, c'est une plateforme qui va permettre d'obtenir des informations sur d'innnombrables sources de données. Dans notre cas Splunk va avoir un peu la même utilisateur que Wazuh et Elastic.
+Une des particularité de Splunk c'est qu'il faut obligatoirement créer un compte pour pouvoir télécharger le paquet pour installer le serveur et le forwarder côté client. L'installation reste simple, elle est accompagnée d'un assistant pour facilité cette dernière. Une fois installer, le serveur est accessible sur le port 8000. Sur le serveur pour pouvoir écouter les clients, on va venir créer un receveur sur le port 9997 (par défaut). Maintenant côté client il s'agit d'un exécutable où il va falloir préciser l'adresse IP du serveur ainsi que les ports par défaut notamment celui du receveur 9997. Le forwarder ne suffit pas à recevoir les informations des clients windows, il faut également télécharger un addon et modifier un fichier de configuration pour enfin pour observer l'apparition de nos agents. En voici un exemple :
+
+<img src="Photo_SAECLOUDCYBER\clientsplunk.png"> 
+
+L'installation et la configuration est très simple mais demande un petit temps si elle n'est pas faite de manière automatique à l'aide de ansible. Dans notre cas on a également rajouter la réception des logs sysmon sur le serveur avec l'ajout du port UDP 514 en écoute et côté client l'ajout de deux petits paramètres sur un fichier de conf. On observera bien par la suite la remontée de log sysmon :
+
+<img src="Photo_SAECLOUDCYBER\sysmon_log.png"> 
+
+⭐ Vous pouvez retrouver notre compte rendu sur Splunk ainsi qu'un fichier de log et un fichier .evtx sur notre github au chemin suivant :
+
+:octocat: Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+
+* **Compte Rendu** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ SPLUNK ➔ SAE_INSTALL_SPLUNK.pdf
+
+* **Fichier de log** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ SPLUNK ➔ SPLUNK_LOGS-2023-12-07.pdf
+
+* **Fichier evtx** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ SPLUNK ➔ sysmon_log.evtx
 
 ## <b><u>IX/ Auditd - Chainsaw - Hayabusa</u></b>
 
 ## <b><u>X/ Attaques</u></b>
 
 ## <b><u>XI/ Schéma Réseau</u></b>
+
+Pour cette SAE, il fallait réaliser la conception d'un schéma réseau, hors au vu de l'organisation de la SAE qui met en parallèle VirtualBox et Proxmox, il paraissait compliqué de réunir tout sur un même schéma, notre groupe a par conséquent de réaliser un schéma pour VirtualBox et un schéma pour Proxmox :
+
+* ### <u><b> VirtualBox </b></u>
+
+<img src="Schéma Réseau.png"> 
+
+* ### <u><b> Proxmox </b></u>
 
 ## <b><u>XII/ Conclusion</u></b>
 
