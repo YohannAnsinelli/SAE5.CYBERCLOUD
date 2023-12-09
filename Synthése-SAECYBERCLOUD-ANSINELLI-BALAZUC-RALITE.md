@@ -49,7 +49,7 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
     Une fois l'installation terminée on observera sur virtualbox l'ensemble des DC et SRV appraître sous cette forme :
 
-    ![Alt text](Photo_SAECLOUDCYBER\VirtualBox.png)
+    <img src="Photo_SAECLOUDCYBER\VirtualBox.png">
 
 * ### <u><b> Proxmox </b></u>
 
