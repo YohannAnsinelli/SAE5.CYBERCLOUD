@@ -57,7 +57,7 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
 Le support utilisé pour la répartition des tâches a été trello, il permet d'organiser et de gérer visuellement et facilement le projet. Voici une photo exemple de notre projet : 
 
-![Alt text](Photo_SAECLOUDCYBER\Trello.png)
+<img src="Photo_SAECLOUDCYBER\Trello.png">
 
 Vous pouvez retrouver le Trello de notre groupe en cliquant sur ce lien ce mot **[Yojuma](https://trello.com/invite/b/7TZ5XEJ0/ATTI6f183bf588a9821f81585e399a62ff8dED5283D7/yojuma34500)**
 
