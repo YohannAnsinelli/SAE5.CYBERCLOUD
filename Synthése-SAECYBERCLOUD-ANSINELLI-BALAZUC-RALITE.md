@@ -109,11 +109,11 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 
 * ### <u><b> VirtualBox </b></u>
 
-    Elastic est une entreprise proposant Elastic Stack, une plateforme logicielle open source pour la recherche, l'analyse et la visualisation de données. Composée d'Elasticsearch, Logstash, Kibana, et Beats, cette suite d'outils est utilisée pour la gestion des logs, la surveillance, l'analyse de données, et d'autres applications liées à la recherche et à l'analyse de données. Elastic Stack est flexible et scalable, adapté à diverses situations, de la gestion des logs à l'analytique des données, et est largement utilisé dans des contextes allant des petites entreprises aux grandes organisations.
-  Nous avons opté pour une installation d'Elastic automatisé, en effet l'installation de Elastic est automatisé, ainsi que la mise en place des policies et des intégrations:
-      https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/tree/main/Lancer_ansible_srv_dc
-  Script Cloné lors du lancement du script d'installation:
-      https://github.com/RaliteJ/repo_script_elastic
+    Elastic est une entreprise proposant Elastic Stack, une plateforme logicielle open source pour la recherche, l'analyse et la visualisation de données. Composée d'Elasticsearch, Logstash, Kibana, et Beats, cette suite d'outils est utilisée pour la gestion des logs, la surveillance, l'analyse de données, et d'autres applications liées à la recherche et à l'analyse de données. Elastic Stack est flexible et scalable, adapté à diverses situations, de la gestion des logs à l'analytique des données, et est largement utilisé dans des contextes allant des petites entreprises aux grandes organisations.</br>
+  Nous avons opté pour une installation d'Elastic automatisé, en effet l'installation de Elastic est automatisé, ainsi que la mise en place des policies et des intégrations:</br>
+      https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/tree/main/Lancer_ansible_srv_dc</br>
+  Script Cloné lors du lancement du script d'installation:</br>
+      https://github.com/RaliteJ/repo_script_elastic</br>
   
 * ### <u><b> Proxmox </b></u>
 
