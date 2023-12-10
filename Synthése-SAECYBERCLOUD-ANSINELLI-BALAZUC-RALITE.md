@@ -58,6 +58,10 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
     ![Alt text](Photo_SAECLOUDCYBER/Network(Proxmox).png)
 
+    Ensuite, on installe la VM Pfsense qui nous servira de pare-feu (Firewall) et de serveur DHCP pour les agents GOAD.
+
+    ![Alt text](Photo_SAECLOUDCYBER/Pfsense(Proxmox).png)
+
 ## <b><u>III/ Répartitions des tâches</u></b>
 
 Le support utilisé pour la répartition des tâches a été trello, il permet d'organiser et de gérer visuellement et facilement le projet. Voici une photo exemple de notre projet : 
