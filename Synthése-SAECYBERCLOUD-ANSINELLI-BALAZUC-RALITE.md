@@ -60,13 +60,28 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
     ![Alt text](Photo_SAECLOUDCYBER/Network(Proxmox).png)
 
-    Ensuite, on installe la VM Pfsense qui nous servira de pare-feu (Firewall) et de serveur DHCP pour les agents GOAD.
+    Ensuite, on installe la VM **Pfsense** qui nous servira de pare-feu (Firewall) et de serveur DHCP pour les agents GOAD.
 
     ![Alt text](Photo_SAECLOUDCYBER/Pfsense(Proxmox).png)
 
     On configure le pare-feu pour les réseaux LAN, WAN et le VLAN10 sur Pfsense.
 
-    Ensuite nous allons créer un tem 
+    Ensuite nous allons créer un template Provisioning
+    ![Alt text](Photo_SAECLOUDCYBER/provisioning(proxmox).png)
+
+    **Packer** sera néccesaire pour l'installation de serveur Windows :
+    ![Alt text](Photo_SAECLOUDCYBER/packer(proxmox).png)
+
+    **Terraform** nous permettra l'installation des VM de GOAD : 
+     ![Alt text](Photo_SAECLOUDCYBER/goad(proxmox).png)
+
+     Et enfin **Ansible** : 
+
+     ![Alt text](Photo_SAECLOUDCYBER/ansible(proxmox).png)
+
+
+
+
 ## <b><u>III/ Répartitions des tâches</u></b>
 
 Le support utilisé pour la répartition des tâches a été trello, il permet d'organiser et de gérer visuellement et facilement le projet. Voici une photo exemple de notre projet : 
@@ -125,8 +140,24 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
       
 * ### <u><b> Proxmox </b></u>
 
-## <b><u>V/ Wazuh</u></b>
+_**Installation complète détaillée sur mon compte rendu [(ici)](https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/50967c96a3e9a301410d69b4aa8e74497344c21e/(Proxmox)Installation_Elastic_&_Wazuh/Installation-Elastic(Proxmox)-SAE-Balazuc-Math%C3%A9o.pdf).**_
 
+Installation d'Elastic, Fleet, Kibana, Filebeat :
+![Alt text](Photo_SAECLOUDCYBER/docker-elastic(proxmox).png)
+
+Configuration de la policy Elastic pour les agents GOAD, avec leurs intégrations :
+ ![Alt text](Photo_SAECLOUDCYBER/policy-elastic(proxmox).png)
+
+Ajout de tout les agents GOAD : 
+![Alt text](Photo_SAECLOUDCYBER/agent-elastic(proxmox).png)
+
+Visualisation d'alertes des agents GOAD avec les règles Sigma et le logiciel APT Simulator : 
+![Alt text](Photo_SAECLOUDCYBER/alertes-elastic(proxmox).png)
+![Alt text](Photo_SAECLOUDCYBER/regles-elastic(proxmox).png)
+
+
+## <b><u>V/ Wazuh</u></b>
+* ### <u><b> VirtualBox </b></u>
 Wazuh est une plateforme de gestion de la sécurité open-source qui offre une approche complète pour renforcer la sécurité des entreprises. Grâce à ses fonctionnalités de détection des menaces, de surveillance des journaux et de gestion des incidents, Wazuh permet de détecter rapidement les activités malveillantes, de suivre les incidents de sécurité et de prendre des mesures correctives. La plateforme propose une interface web facile à prendre en main pour visualiser les alertes, les rapports et les tableaux de bord, facilitant ainsi la compréhension de l'état de la sécurité. Wazuh dispose d'un côté serveur et un côté agent à déployer sur l'ensemble des machines du GOAD, une fois déployer on peut observer en temps réel l'activité de l'ensemble de nos machines :
 
 <img src="Photo_SAECLOUDCYBER\wazuh.png">
@@ -150,6 +181,17 @@ Et enfin Wazuh nous permettra de voir comment réagisse nos machines en cas d'at
 * **Compte Rendu** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ WAZUH ➔ WAZUH-INSTALL.pdf
 
 * **Fichier d'alerts log** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ WAZUH ➔ alerts.log
+
+* ### <u><b> Proxmox </b></u>
+  _**Installation complète détaillée sur mon compte rendu [(ici)](https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/d8ef1963aacfec93a09d3f9db8e79549b897fa62/(Proxmox)Installation_Elastic_&_Wazuh/Installation-Wazuh(Proxmox)-SAE-Balazuc-Matheo.pdf).**_
+
+  Installation de Wazuh et interface Web : 
+![Alt text](Photo_SAECLOUDCYBER/wazuh(proxmox).png)
+![Alt text](Photo_SAECLOUDCYBER/wazuh-web(proxmox).png)
+
+    Ajout des agents GOAD : 
+    ![Alt text](Photo_SAECLOUDCYBER/agents-wazuh(proxmox).png)
+
 
 ## <b><u>VI/ BloodHound</u></b>
 
@@ -255,14 +297,6 @@ Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temp
 
 ## <b><u>X/ Attaques</u></b>
 
-Des attaques ont étaient effectuées puis visualisées sur Wazuh, ces attaques ont étaient faites sur l'AD avec la mise en place de schémas d'attaques probables avec BloodHound</br>
-
-⭐Les différentes attaques effectués sur l'AD sont disponibles ici:
- 
-🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
-
- SAE5.CYBERCLOUD ➔ Attaque ➔ attaque.pdf
-
 ## <b><u>XI/ Schéma Réseau</u></b>
 
 Pour cette SAE, il fallait réaliser la conception d'un schéma réseau, hors au vu de l'organisation de la SAE qui met en parallèle VirtualBox et Proxmox, il paraissait compliqué de réunir tout sur un même schéma, notre groupe a par conséquent de réaliser un schéma pour VirtualBox et un schéma pour Proxmox :
@@ -273,7 +307,7 @@ Pour cette SAE, il fallait réaliser la conception d'un schéma réseau, hors au
 
 * ### <u><b> Proxmox </b></u>
 
-## <b><u>XII/ Conclusion</u></b>
+## <b><u>XIII/ Conclusion</u></b>
 
 En Conclusion, notre équipe aura pu mettre en place de nombreux outils permettant la surveillance et la défense de notre réseau, tous avec des avantages, ce qui nous a permis de les comparer et de voir lesquelles répondent le mieux à notre besoin, mais également cela nous a permis d'en découvrir de nouveau et par conséquent agrandir notre bibliothèque personnelle. Pour plus de diversité, le déploiement a été effectué sur plusieurs logiciels/plateformes de virtualisation permettant d'étendre nos capacités d'adaptations en entreprise. Le principe de "blue team" et "red team" a permis notamment de voir comment nos machines réagissent fasse à une menace et quelles sont les mesures à prendre pour protéger le réseau de cette dernière. Cette SAE aura aussi permis de renforcer le travail d'équipe, dans notre cas cela regrouper deux personnes d'une même filière avec une personne d'une filière différente permettant d'apporter un point de vue différent. Dans notre groupe, on a d'abord regardé là où chacun était le plus à l'aise pour ensuite se repartir les tâches et faire des petites réunion sur l'avancement du projet tous les jours, mais également l'utilisation en parallèle une application de gestion de tâche pour permettre de noter l'avancement des tâches de chacun. Comparais au dernier passage de Mr Pouchoulon pour vérifier ce qui a été fait au sein du groupe, il y a eu l'ajout de tous les agents sur Splunk, mais également le déploiement d'audit sur les postes Windows. 
 
