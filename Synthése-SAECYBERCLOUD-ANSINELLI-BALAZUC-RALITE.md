@@ -8,7 +8,7 @@
 
 ## <b><u>I/ Présentation SAE</u></b>
 
-Cette SAE a pour objectif de créer un environnement d'entraînement pour les équipes "blue team et red team" de notre entreprise. Nous devions mettre en oeuvre un environnement technique permettant de simuler un environnement de production Windows à la fois sur VirtualBox et sur Proxmox. Nous sommes un groupe composé de trois membres, qui avait chacun différentes tâches à remplir. 
+Cette SAE a pour objectif de créer un environnement d'entraînement pour les équipes "blue team et red team" de notre entreprise. Nous devions mettre en oeuvre un environnement technique permettant de simuler un environnement de production Windows à la fois sur VirtualBox et sur Proxmox. Nous sommes un groupe composé de trois membres, qui avait chacun différentes tâches à remplir. On va notamment pouvoir mettre en place des SIEM, ils permettent de réaliser de la collecte de données, faire un stockage sécurisé de ces dernières, ils vont être très important dans leurs rôles d'analyste et sur les rapports détaillés et vont permettre la détection des incidents de sécurité.
 
 ## <b><u>II/ Déploiement Environnement</u></b>
 
@@ -92,7 +92,43 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 
 ## <b><u>V/ Wazuh</u></b>
 
+Wazuh est une plateforme de gestion de la sécurité open-source qui offre une approche complète pour renforcer la sécurité des entreprises. Grâce à ses fonctionnalités de détection des menaces, de surveillance des journaux et de gestion des incidents, Wazuh permet de détecter rapidement les activités malveillantes, de suivre les incidents de sécurité et de prendre des mesures correctives. La plateforme propose une interface web facile à prendre en main pour visualiser les alertes, les rapports et les tableaux de bord, facilitant ainsi la compréhension de l'état de la sécurité. Wazuh dispose d'un côté serveur et un côté agent à déployer sur l'ensemble des machines du GOAD, une fois déployer on peut observer en temps réel l'activité de l'ensemble de nos machines :
+
+<img src="Photo_SAECLOUDCYBER\wazuh.png">
+
+Le déploiement de notre serveur et de nos agents pourra se faire de manière automatique grâce à un script ansible qu'on a fait :
+
+<img src="Photo_SAECLOUDCYBER\wazuh_ansible.png">
+
+On a ensuite configurer notre serveur et nos agents pour remonter les logs de sécurité sysmon :
+
+<img src="Photo_SAECLOUDCYBER\sysmon.png">
+
+Et enfin Wazuh nous permettra de voir comment réagisse nos machines en cas d'attaques et de visualiser un rapport rapide des attaques faites :
+
+<img src="Photo_SAECLOUDCYBER\attaques.png">
+
+⭐ Vous pouvez retrouver notre compte rendu sur WAZUH ainsi qu'un fichier de log sur notre github au chemin suivant :
+
+🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+
+* **Compte Rendu** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ WAZUH ➔ WAZUH-INSTALL.pdf
+
+* **Fichier d'alerts log** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ WAZUH ➔ alerts.log
+
 ## <b><u>VI/ BloodHound</u></b>
+
+BloodHound est principalement utilisé pour l'analyse de la sécurité des infrastructures AD dans les environnements Windows. Il permet de visualiser et d'analyser les relations entre les différents objets AD, comme les utilisateurs, les ordinateurs ... Il va collecter des donnéesà partir de l'AD pour construire des graphiques représentant les relations entre les objets AD. On peut par conséquent visualiser rapidement les vulnérabilités potentielles. Notre groupe a notamment pu visualiser le graphique de tout les domaines admins :
+
+<img src="Photo_SAECLOUDCYBER\bloodhound.png">
+
+⭐ Vous pouvez retrouver notre compte rendu sur BloodHound sur notre github au chemin suivant :
+
+🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+
+**ATTENTION** le compte rendu a été effectué sur un ordinateur portable de l'entreprise d'un membre du groupe par conséquent le nom en bas du fichier pdf et obsolète !
+
+* **Compte Rendu** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ BloodHound.pdf 
 
 ## <b><u>VII/ OpenWEC</u></b>
 
@@ -170,7 +206,7 @@ Hayabusa a un peu la même utilité que Chainsaw il va nous permettre de faire d
 
 Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temps et par manque de fichier.
 
-⭐ Vous pouvez retrouver notre compte rendu sur Splunk ainsi qu'un fichier de log et un fichier .evtx sur notre github au chemin suivant :
+⭐ Vous pouvez retrouver notre compte rendu sur l'ensemble d'audit et de chainsaw/hayabusa ainsi qu'un fichier de log et les fichiers de chasse sur notre github au chemin suivant :
 
 🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
 
@@ -196,8 +232,7 @@ Pour cette SAE, il fallait réaliser la conception d'un schéma réseau, hors au
 
 ## <b><u>XII/ Conclusion</u></b>
 
-Ne pas hésiter à mettre ici ce qu'on a fait en plus entre lorsque le prof est passé et maintenant !
-
+En Conclusion, notre équipe aura pu mettre en place de nombreux outils permettant la surveillance et la défense de notre réseau, tous avec des avantages, ce qui nous a permis de les comparer et de voir lesquelles répondent le mieux à notre besoin, mais également cela nous a permis d'en découvrir de nouveau et par conséquent agrandir notre bibliothèque personnelle. Pour plus de diversité, le déploiement a été effectué sur plusieurs logiciels/plateformes de virtualisation permettant d'étendre nos capacités d'adaptations en entreprise. Le principe de "blue team" et "red team" a permis notamment de voir comment nos machines réagissent fasse à une menace et quelles sont les mesures à prendre pour protéger le réseau de cette dernière. Cette SAE aura aussi permis de renforcer le travail d'équipe, dans notre cas cela regrouper deux personnes d'une même filière avec une personne d'une filière différente permettant d'apporter un point de vue différent. Dans notre groupe, on a d'abord regardé là où chacun était le plus à l'aise pour ensuite se repartir les tâches et faire des petites réunion sur l'avancement du projet tous les jours, mais également l'utilisation en parallèle une application de gestion de tâche pour permettre de noter l'avancement des tâches de chacun. Comparais au dernier passage de Mr Pouchoulon pour vérifier ce qui a été fait au sein du groupe, il y a eu l'ajout de tous les agents sur Splunk, mais également le déploiement d'audit sur les postes Windows. 
 
 
 
