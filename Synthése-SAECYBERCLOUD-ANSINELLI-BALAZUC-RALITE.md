@@ -109,8 +109,12 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 
 * ### <u><b> VirtualBox </b></u>
 
-
-        https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/tree/main/Lancer_ansible_srv_dc
+    Elastic est une entreprise proposant Elastic Stack, une plateforme logicielle open source pour la recherche, l'analyse et la visualisation de données. Composée d'Elasticsearch, Logstash, Kibana, et Beats, cette suite d'outils est utilisée pour la gestion des logs, la surveillance, l'analyse de données, et d'autres applications liées à la recherche et à l'analyse de données. Elastic Stack est flexible et scalable, adapté à diverses situations, de la gestion des logs à l'analytique des données, et est largement utilisé dans des contextes allant des petites entreprises aux grandes organisations.
+  Nous avons opté pour une installation d'Elastic automatisé, en effet l'installation de Elastic est automatisé, ainsi que la mise en place des policies et des intégrations:
+      https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/tree/main/Lancer_ansible_srv_dc
+  Script Cloné lors du lancement du script d'installation:
+      https://github.com/RaliteJ/repo_script_elastic
+  
 * ### <u><b> Proxmox </b></u>
 
 ## <b><u>V/ Wazuh</u></b>
@@ -201,7 +205,7 @@ L'installation et la configuration est très simple mais demande un petit temps 
 
 1. <u><b>Auditd</u></b>
 
-Auditd permet d'implémenter ce qu'on appel des "hooks" ou appels système, qui permettent de surveiller les processus en mode utilisateur et générer des événements d'audit dans le cas où ils correspondent à la politique de sécurité définie sur le système. Dans notre cas pour la SAE l'utilisation de autid sur Linux à seulement permis de faire la surveillance du fichier "/etc/passwd" en ajoutant une régle dans le fichier de rules de auditd, vous pouvez retrouver une image de la configuration du fichier ci-dessous :
+Auditd permet d'implémenter ce qu'on appel des "hooks" ou appels système, qui permettent de surveiller les processus en mode utilisateur et générer des événements d'audit dans le cas où ils correspondent à la politique de sécurité définie sur le système. Dans notre cas pour la SAE l'utilisation de auditd sur Linux à seulement permis de faire la surveillance du fichier "/etc/passwd" en ajoutant une régle dans le fichier de rules de auditd, vous pouvez retrouver une image de la configuration du fichier ci-dessous :
 
 <img src="Photo_SAECLOUDCYBER\auditd.png"> 
 
