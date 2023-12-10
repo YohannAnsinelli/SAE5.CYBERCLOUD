@@ -52,6 +52,11 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
     <img src="Photo_SAECLOUDCYBER\VirtualBox.png">
 
 * ### <u><b> Proxmox </b></u>
+  L'installation du projet GOAD sur un serveur Proxmox nécessite plusieurs configurations et installations.
+
+    Pour commencer, il faut configurer les réseaux du serveur en lui ajoutant des réseaux LAN, WAN et des VLAN.
+
+    ![Alt text](Photo_SAECLOUDCYBER/Network(Proxmox).png)
 
 ## <b><u>III/ Répartitions des tâches</u></b>
 
@@ -68,8 +73,8 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 |<center>GOAD VirtualBox</center>       |   Justin    |       |       |
 |<center>GOAD Proxmox</center>       |   Mathéo    |    72h   |   Déploiement à la main de GOAD, résolution d'erreurs au fur et à mesure.    |
 |<center>Ansible Proxmox</center>       |   Mathéo    |    48h   |   Installation d'Ansible sur GOAD avec les scripts, avec la résolution de plusieurs erreurs.    |
-|<center>Packer Proxmox</center>       |   Mathéo    |    2h   |   Installation de Packer sur Provisioning.    |
-|<center>Terraform Proxmox</center>       |   Mathéo    |    2h   |   Installation de Terraform sur Provisioning.    |
+|<center>Packer Proxmox</center>       |   Mathéo    |    2h   |   Installation de Packer.    |
+|<center>Terraform Proxmox</center>       |   Mathéo    |    2h   |   Installation de Terraform.    |
 |<center>iDRAC</center>       |   Mathéo    |    1h   |   Configuration réseau et administration du serveur Dell.    |
 |<center>Ansible - Automatisation</center>       |    Justin   |       |       |
 |<center>Elastic VirtualBox</center>       |    Yohann - Justin   |       |       |
