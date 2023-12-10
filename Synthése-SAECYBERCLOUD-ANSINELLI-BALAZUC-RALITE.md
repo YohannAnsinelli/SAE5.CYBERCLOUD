@@ -113,13 +113,13 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 |<center>Autid</center>       |   Yohann    |   5h    | • <u>Côté linux </u> :<br/> Installation du paquet auditd avec la mise en place d'une surveillance sur le fichier "/etc/passwd". <br/><br/>• <u>Côté Windows </u> :<br/> Activation de audit pour réaliser la surveillance du fichier log de Splunk.  |
 |<center>pfSense</center>       |    Mathéo   |   6h    |   Ajout de Firewall, WAN, LAN, VLAN's, DHCP Serveur    |
 |<center>Schéma Réseau VirtualBox</center>       |    Yohann   |   2h    |   Création rapide du schéma de notre réseau sur VirtualBox avec l'ajout de petit logo pour faciliter la compréhension de chaque machine sur le schéma.    |
-|<center>Schéma Réseau Proxmox</center>       |    Mathéo   |   1h    |       |
-|<center>Attaques</center>       |     Justin   |      |        |
+|<center>Schéma Réseau Proxmox</center>       |    Mathéo   |   1h    |   Création rapide du schéma côté proxmox    |
+|<center>Attaques</center>       |     Justin   |   12h   |     Lancement d'attaques principalement sur Wazuh avec l'aide d'outils comme nmap, crackmapexec, enumuser ... |
 |<center>Alertes</center>       |    Mathéo  |    3h   |    (Mathéo: Ajouts de Sigma's, utilisation de APT Simulator)   |
 
 **⚠️ ATTENTION ⚠️** Les heures passées sur chaque tâches ne prennent pas en compte la rédaction des différents comptes rendus. 
     
-## <b><u>IV/ Elasitc</u></b>
+## <b><u>IV/ Elastic</u></b>
     
 Elastic est une entreprise proposant Elastic Stack, une plateforme logicielle open source pour la recherche, l'analyse et la visualisation de données. Composée d'Elasticsearch, Logstash, Kibana, et Beats, cette suite d'outils est utilisée pour la gestion des logs, la surveillance, l'analyse de données, et d'autres applications liées à la recherche et à l'analyse de données. Elastic Stack est flexible et scalable, adapté à diverses situations, de la gestion des logs à l'analytique des données, et est largement utilisé dans des contextes allant des petites entreprises aux grandes organisations.</br>
     
