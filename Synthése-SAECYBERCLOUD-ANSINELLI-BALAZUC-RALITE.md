@@ -109,6 +109,8 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 
 * ### <u><b> VirtualBox </b></u>
 
+
+        https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/tree/main/Lancer_ansible_srv_dc
 * ### <u><b> Proxmox </b></u>
 
 ## <b><u>V/ Wazuh</u></b>
@@ -241,10 +243,10 @@ Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temp
 
 ## <b><u>X/ Attaques</u></b>
 
-Des attaques ont étaient effectuées puis visualisées sur Wazuh, ces attaques ont étaient faites sur l'AD, mise en place de schémas d'attaques probables avec BloodHound.
-
-Tentative de prise de controle d'un compte dans l'Active Directory:
-
+Des attaques ont étaient effectuées puis visualisées sur Wazuh, ces attaques ont étaient faites sur l'AD, mise en place de schémas d'attaques probables avec BloodHound:
+**https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/main/Attaque/BloodHound.pdf**
+Tentative de prise de controle d'un user dans l'Active Directory:
+**https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/main/Attaque/attaque.pdf**
 
 
 ## <b><u>XI/ Schéma Réseau</u></b>
