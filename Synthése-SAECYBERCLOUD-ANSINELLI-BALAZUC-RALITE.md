@@ -80,26 +80,28 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 
 |       |   <center>Membre</center>    |   <center>Nombre(s) d'Heure(s)</center>    |   <center>Commentaire(s)</center>    |
 |---    |:-:    |:-:    |:-:    |
-|<center>GOAD VirtualBox</center>       |   Justin    |       |       |
+|<center>GOAD VirtualBox</center>       |   Justin    |    48h   |   Installation sur 3 machines IUT différentes plus debug pour au final finir sur PC Perso   |
 |<center>GOAD Proxmox</center>       |   Mathéo    |    72h   |   Déploiement à la main de GOAD, résolution d'erreurs au fur et à mesure.    |
 |<center>Ansible Proxmox</center>       |   Mathéo    |    48h   |   Installation d'Ansible sur GOAD avec les scripts, avec la résolution de plusieurs erreurs.    |
 |<center>Packer Proxmox</center>       |   Mathéo    |    2h   |   Installation de Packer.    |
 |<center>Terraform Proxmox</center>       |   Mathéo    |    2h   |   Installation de Terraform.    |
 |<center>iDRAC</center>       |   Mathéo    |    1h   |   Configuration réseau et administration du serveur Dell.    |
-|<center>Ansible - Automatisation</center>       |    Justin   |       |       |
-|<center>Elastic VirtualBox</center>       |    Yohann - Justin   |       |       |
+|<center>Ansible - Automatisation</center>       |    Justin   |   16h    |    Compréhension de l'utilisation d'API Elastic + mise en corrélation script bash + ansible   |
+|<center>Scripts - Automatisation</center>       |    Justin   |   24h    |    Script qui utilisent l'API elastic   |
+|<center>Elastic VirtualBox</center>       |    Yohann - Justin   |   Justin(24h)   |    Justin (Script Bash + Ansible)   |
 |<center>Elastic Proxmox</center>       |   Mathéo    |   3h    |   Installation du serveur Elastic, des intégrations et déploiement sur les Agents.    |
-|<center>Wazuh</center>       |   Yohann - Justin    |    8h   |       |
+|<center>Wazuh</center>       |   Yohann - Justin    |    8h   |   Installation plus attaques   |
 |<center>Wazuh Proxmox</center>       |   Mathéo    |    1h30   |    Installation du Serveur Wazuh et déploiement sur les Agents GOAD.   |
 |<center>OpenWEC</center>       |   Yohann    |   24h    |   Déploiement du serveur + client OpenWEC pour le DC03 / Beaucoup de problèmes avant de parvenir à réussir.    |
-|<center>BloodHound</center>       |   Justin    |       |       |
+|<center>BloodHound</center>       |   Justin    |   0.5h    |       |
 |<center>Splunk</center>       |   Yohann    |   8h    |       |
 |<center>Chainsaw - Hayabusa</center>       |   Yohann    |    4h   |   Installation + Chasse globale + Répartion des différents events par ID / Pas de difficultés particulières de rencontrées, mais un manque de temps pour pouvoir mieux manipuler les outils.    |
 |<center>Autid</center>       |   Yohann    |   5h    | • <u>Côté linux </u> :<br/> Installation du paquet auditd avec la mise en place d'une surveillance sur le fichier "/etc/passwd". <br/><br/>• <u>Côté Windows </u> :<br/> Activation de audit pour réaliser la surveillance du fichier log de Splunk.  |
 |<center>pfSense</center>       |    Mathéo   |   6h    |   Ajout de Firewall, WAN, LAN, VLAN's, DHCP Serveur    |
 |<center>Schéma Réseau VirtualBox</center>       |    Yohann   |   2h    |   Création rapide du schéma de notre réseau sur VirtualBox avec l'ajout de petit logo pour faciliter la compréhension de chaque machine sur le schéma.    |
 |<center>Schéma Réseau Proxmox</center>       |    Mathéo   |       |       |
-|<center>Attaques</center>       |    Mathéo - Justin   |    3h(Mathéo)   |    (Mathéo: Ajouts de Sigma's, utilisation de APT Simulator)   |
+|<center>Sigma Rules</center>       |    Mathéo   |       |   Ajouts de Sigma's, utilisation de APT Simulator    |
+|<center>Attaques</center>       |     Justin   |   16h  |  6h de rooms AD rootme pour comprendre comment fonctionne Kerberos, 5h d'attaque sans GOAD |
 
 **⚠️ ATTENTION ⚠️** Les heures passées sur chaque tâches ne prennent pas en compte la rédaction des différents comptes rendus. 
     
