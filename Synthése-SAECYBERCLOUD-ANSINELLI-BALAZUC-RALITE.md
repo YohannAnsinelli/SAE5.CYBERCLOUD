@@ -247,10 +247,10 @@ Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temp
 
 ## <b><u>X/ Attaques</u></b>
 
-Des attaques ont étaient effectuées puis visualisées sur Wazuh, ces attaques ont étaient faites sur l'AD, mise en place de schémas d'attaques probables avec BloodHound:
-**https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/main/Attaque/BloodHound.pdf**
-Tentative de prise de controle d'un user dans l'Active Directory:
-**https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/main/Attaque/attaque.pdf**
+Des attaques ont étaient effectuées puis visualisées sur Wazuh, ces attaques ont étaient faites sur l'AD, mise en place de schémas d'attaques probables avec BloodHound:</br>
+**https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/main/Attaque/BloodHound.pdf**</br>
+Tentative de prise de controle d'un user dans l'Active Directory:</br>
+**https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/main/Attaque/attaque.pdf**</br>
 
 
 ## <b><u>XI/ Schéma Réseau</u></b>
