@@ -106,15 +106,25 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 **⚠️ ATTENTION ⚠️** Les heures passées sur chaque tâches ne prennent pas en compte la rédaction des différents comptes rendus. 
     
 ## <b><u>IV/ Elasitc</u></b>
-
+    
+    Elastic est une entreprise proposant Elastic Stack, une plateforme logicielle open source pour la recherche, l'analyse et la visualisation de données. Composée d'Elasticsearch, Logstash, Kibana, et Beats, cette suite d'outils est utilisée pour la gestion des logs, la surveillance, l'analyse de données, et d'autres applications liées à la recherche et à l'analyse de données. Elastic Stack est flexible et scalable, adapté à diverses situations, de la gestion des logs à l'analytique des données, et est largement utilisé dans des contextes allant des petites entreprises aux grandes organisations.</br>
+    
 * ### <u><b> VirtualBox </b></u>
 
-    Elastic est une entreprise proposant Elastic Stack, une plateforme logicielle open source pour la recherche, l'analyse et la visualisation de données. Composée d'Elasticsearch, Logstash, Kibana, et Beats, cette suite d'outils est utilisée pour la gestion des logs, la surveillance, l'analyse de données, et d'autres applications liées à la recherche et à l'analyse de données. Elastic Stack est flexible et scalable, adapté à diverses situations, de la gestion des logs à l'analytique des données, et est largement utilisé dans des contextes allant des petites entreprises aux grandes organisations.</br>
-  Nous avons opté pour une installation d'Elastic automatisé, en effet l'installation de Elastic est automatisé, ainsi que la mise en place des policies et des intégrations:</br>
-      https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/tree/main/Lancer_ansible_srv_dc</br>
-  Script Cloné lors du lancement du script d'installation:</br>
-      https://github.com/RaliteJ/repo_script_elastic</br>
-  
+  Nous avons opté pour une installation d'Elastic automatisé ainsi que de la mise en place des policies et des intégrations automatiquement. Lorsque Elastic plante, celui-ci plante ses agents ainsi que ses policies et ses intégrations, l'ajout 'intégration, des agents ainsi que des policies est donc automatisé pour simplifier la remise en route du Serveur entièrement.
+      
+  ⭐ Vous pouvez retrouver notre compte rendu sur l'automatisation au chemin suivant :
+
+  🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+
+    * **Compte Rendu** : SAE5.CYBERCLOUD ➔ Automatisation ➔ ansible.pdf
+    
+    * **Scripts Installation Elastic** : SAE5.CYBERCLOUD ➔ Automatisation ➔ Installation_elastic
+      
+    * **Scripts Déploiement Agent** : SAE5.CYBERCLOUD ➔ Automatisation ➔ Déploiement_agents
+      
+    * **Scripts bash utilisés par Ansible** :  https://github.com/RaliteJ/repo_script_elastic
+      
 * ### <u><b> Proxmox </b></u>
 
 ## <b><u>V/ Wazuh</u></b>
@@ -247,11 +257,13 @@ Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temp
 
 ## <b><u>X/ Attaques</u></b>
 
-Des attaques ont étaient effectuées puis visualisées sur Wazuh, ces attaques ont étaient faites sur l'AD, mise en place de schémas d'attaques probables avec BloodHound:</br>
-**https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/main/Attaque/BloodHound.pdf**</br>
-Tentative de prise de controle d'un user dans l'Active Directory:</br>
-**https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/main/Attaque/attaque.pdf**</br>
+Des attaques ont étaient effectuées puis visualisées sur Wazuh, ces attaques ont étaient faites sur l'AD avec la mise en place de schémas d'attaques probables avec BloodHound</br>
 
+⭐Les différentes attaques effectués sur l'AD sont disponibles ici:
+ 
+🐱 Lien vers notre github : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD
+
+ SAE5.CYBERCLOUD ➔ Attaque ➔ attaque.pdf
 
 ## <b><u>XI/ Schéma Réseau</u></b>
 
