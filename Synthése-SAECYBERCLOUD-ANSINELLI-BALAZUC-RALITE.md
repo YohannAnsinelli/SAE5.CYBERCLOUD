@@ -64,10 +64,9 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
     ![Alt text](Photo_SAECLOUDCYBER/Pfsense(Proxmox).png)
 
-    On configure le pare-feu pour les réseaux LAN, WAN et le VLAN10 sur Pfsense : 
-    ![Alt text](Photo_SAECLOUDCYBER/firewall(vlan10)pfsense.png)
-    ![Alt text](Photo_SAECLOUDCYBER/firewall(wan)pfsense.png)
+    On configure le pare-feu pour les réseaux LAN, WAN et le VLAN10 sur Pfsense.
 
+    Ensuite nous allons créer un tem 
 ## <b><u>III/ Répartitions des tâches</u></b>
 
 Le support utilisé pour la répartition des tâches a été trello, il permet d'organiser et de gérer visuellement et facilement le projet. Voici une photo exemple de notre projet : 
@@ -100,8 +99,7 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 |<center>pfSense</center>       |    Mathéo   |   6h    |   Ajout de Firewall, WAN, LAN, VLAN's, DHCP Serveur    |
 |<center>Schéma Réseau VirtualBox</center>       |    Yohann   |   2h    |   Création rapide du schéma de notre réseau sur VirtualBox avec l'ajout de petit logo pour faciliter la compréhension de chaque machine sur le schéma.    |
 |<center>Schéma Réseau Proxmox</center>       |    Mathéo   |       |       |
-|<center>Sigma Rules</center>       |    Mathéo   |       |   Ajouts de Sigma's, utilisation de APT Simulator    |
-|<center>Attaques</center>       |     Justin   |   16h  |  6h de rooms AD rootme pour comprendre comment fonctionne Kerberos, 5h d'attaque sans GOAD |
+|<center>Attaques</center>       |    Mathéo - Justin   |    3h(Mathéo)   |    (Mathéo: Ajouts de Sigma's, utilisation de APT Simulator)   |
 
 **⚠️ ATTENTION ⚠️** Les heures passées sur chaque tâches ne prennent pas en compte la rédaction des différents comptes rendus. 
     
