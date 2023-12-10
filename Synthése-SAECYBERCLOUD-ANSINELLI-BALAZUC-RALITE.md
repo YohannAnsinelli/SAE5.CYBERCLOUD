@@ -241,6 +241,12 @@ Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temp
 
 ## <b><u>X/ Attaques</u></b>
 
+Des attaques ont étaient effectuées puis visualisées sur Wazuh, ces attaques ont étaient faites sur l'AD, mise en place de schémas d'attaques probables avec BloodHound.
+
+Tentative de prise de controle d'un compte dans l'Active Directory:
+
+
+
 ## <b><u>XI/ Schéma Réseau</u></b>
 
 Pour cette SAE, il fallait réaliser la conception d'un schéma réseau, hors au vu de l'organisation de la SAE qui met en parallèle VirtualBox et Proxmox, il paraissait compliqué de réunir tout sur un même schéma, notre groupe a par conséquent de réaliser un schéma pour VirtualBox et un schéma pour Proxmox :
