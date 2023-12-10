@@ -120,7 +120,7 @@ Et enfin Wazuh nous permettra de voir comment réagisse nos machines en cas d'at
 
 BloodHound est principalement utilisé pour l'analyse de la sécurité des infrastructures AD dans les environnements Windows. Il permet de visualiser et d'analyser les relations entre les différents objets AD, comme les utilisateurs, les ordinateurs ... Il va collecter des donnéesà partir de l'AD pour construire des graphiques représentant les relations entre les objets AD. On peut par conséquent visualiser rapidement les vulnérabilités potentielles. Notre groupe a notamment pu visualiser le graphique de tout les domaines admins :
 
-<img src="Photo_SAECLOUDCYBER\bloodhound.png">
+<img src="Photo_SAECLOUDCYBER\Bloodhound.png">
 
 ⭐ Vous pouvez retrouver notre compte rendu sur BloodHound sur notre github au chemin suivant :
 
