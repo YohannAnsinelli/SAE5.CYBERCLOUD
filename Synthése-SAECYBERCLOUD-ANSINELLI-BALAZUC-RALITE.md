@@ -53,6 +53,7 @@ La première tâche consistait à faire le déploiement de l'environnement qui e
 
 * ### <u><b> Proxmox </b></u>
   L'installation du projet GOAD sur un serveur Proxmox nécessite plusieurs configurations et installations.
+   **_(L'installation est longue, donc voici un rapide résumé des étapes à suivre. Pour obtenir plus de détails, je vous invite à consulter mon compte rendu [(ici)](https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/889820262ddf1d18cd4bd4a73ebc8380600d8cf4/(Proxmox)Installation_GOAD_Pfsense_Packer_Terraform_Ansible/Installation-GOAD(Proxmox)-Pfsense-Packer-Terraform-Ansible-SAE-Balazuc-Matheo.pdf).)_**
 
     Pour commencer, il faut configurer les réseaux du serveur en lui ajoutant des réseaux LAN, WAN et des VLAN.
 
