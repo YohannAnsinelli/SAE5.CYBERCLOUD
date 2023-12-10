@@ -300,6 +300,12 @@ Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temp
 
 * ### <u><b> VirtualBox Attaques </b></u>
 
+Une grande partie des attaques a été réalisé sur WAZUH, on a utilisé les outils nmap, crackmapexec, enumuser ... Au détriment de faire un tableau avec toutes les attaques, un compte rendu a été fait que vous pouvez retrouver sur notre github à l'adresse suivante : https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD 
+
+Chemin pour accèder au compte rendu :
+
+* **Compte Rendu** : SAE5.CYBERCLOUD ➔ Attaque ➔ attaque.pdf
+
 * ### <u><b> Proxmox Alertes </b></u>
   
 Pour le déclenchement d'alertes, nous avons utilisé APT Simulator à partir des agents GOAD.
