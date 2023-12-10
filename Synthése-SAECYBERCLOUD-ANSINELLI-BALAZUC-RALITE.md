@@ -102,26 +102,26 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 |<center>iDRAC</center>       |   Mathéo    |    1h   |   Configuration réseau et administration du serveur Dell.    |
 |<center>Ansible - Automatisation</center>       |    Justin   |   16h    |    Compréhension de l'utilisation d'API Elastic + mise en corrélation script bash + ansible   |
 |<center>Scripts - Automatisation</center>       |    Justin   |   24h    |    Script qui utilisent l'API elastic   |
-|<center>Elastic VirtualBox</center>       |    Yohann - Justin   |   Justin(24h)   |    Justin (Script Bash + Ansible)   |
+|<center>Elastic VirtualBox</center>       |    Yohann - Justin   |   Justin(24h) <br /> Yohann(12h)   |    Justin (Script Bash + Ansible)   |
 |<center>Elastic Proxmox</center>       |   Mathéo    |   3h    |   Installation du serveur Elastic, des intégrations et déploiement sur les Agents.    |
-|<center>Wazuh</center>       |   Yohann - Justin    |    8h   |   Installation plus attaques   |
+|<center>Wazuh</center>       |   Yohann - Justin    |    8h   |   Installation + attaques   |
 |<center>Wazuh Proxmox</center>       |   Mathéo    |    1h30   |    Installation du Serveur Wazuh et déploiement sur les Agents GOAD.   |
 |<center>OpenWEC</center>       |   Yohann    |   24h    |   Déploiement du serveur + client OpenWEC pour le DC03 / Beaucoup de problèmes avant de parvenir à réussir.    |
-|<center>BloodHound</center>       |   Justin    |   0.5h    |       |
-|<center>Splunk</center>       |   Yohann    |   8h    |       |
+|<center>BloodHound</center>       |   Justin    |   0.5h    |   Déploiement BloodHound Serveur + SharpHound  |
+|<center>Splunk</center>       |   Yohann    |   12h    |   Déploiement serveur + clients Windows + logs sysmon    |
 |<center>Chainsaw - Hayabusa</center>       |   Yohann    |    4h   |   Installation + Chasse globale + Répartion des différents events par ID / Pas de difficultés particulières de rencontrées, mais un manque de temps pour pouvoir mieux manipuler les outils.    |
 |<center>Autid</center>       |   Yohann    |   5h    | • <u>Côté linux </u> :<br/> Installation du paquet auditd avec la mise en place d'une surveillance sur le fichier "/etc/passwd". <br/><br/>• <u>Côté Windows </u> :<br/> Activation de audit pour réaliser la surveillance du fichier log de Splunk.  |
 |<center>pfSense</center>       |    Mathéo   |   6h    |   Ajout de Firewall, WAN, LAN, VLAN's, DHCP Serveur    |
 |<center>Schéma Réseau VirtualBox</center>       |    Yohann   |   2h    |   Création rapide du schéma de notre réseau sur VirtualBox avec l'ajout de petit logo pour faciliter la compréhension de chaque machine sur le schéma.    |
 |<center>Schéma Réseau Proxmox</center>       |    Mathéo   |   1h    |       |
 |<center>Attaques</center>       |     Justin   |      |        |
-|<center>Alertes</center>       |    Mathéo  |    3h(Mathéo)   |    (Mathéo: Ajouts de Sigma's, utilisation de APT Simulator)   |
+|<center>Alertes</center>       |    Mathéo  |    3h   |    (Mathéo: Ajouts de Sigma's, utilisation de APT Simulator)   |
 
 **⚠️ ATTENTION ⚠️** Les heures passées sur chaque tâches ne prennent pas en compte la rédaction des différents comptes rendus. 
     
 ## <b><u>IV/ Elasitc</u></b>
     
-    Elastic est une entreprise proposant Elastic Stack, une plateforme logicielle open source pour la recherche, l'analyse et la visualisation de données. Composée d'Elasticsearch, Logstash, Kibana, et Beats, cette suite d'outils est utilisée pour la gestion des logs, la surveillance, l'analyse de données, et d'autres applications liées à la recherche et à l'analyse de données. Elastic Stack est flexible et scalable, adapté à diverses situations, de la gestion des logs à l'analytique des données, et est largement utilisé dans des contextes allant des petites entreprises aux grandes organisations.</br>
+Elastic est une entreprise proposant Elastic Stack, une plateforme logicielle open source pour la recherche, l'analyse et la visualisation de données. Composée d'Elasticsearch, Logstash, Kibana, et Beats, cette suite d'outils est utilisée pour la gestion des logs, la surveillance, l'analyse de données, et d'autres applications liées à la recherche et à l'analyse de données. Elastic Stack est flexible et scalable, adapté à diverses situations, de la gestion des logs à l'analytique des données, et est largement utilisé dans des contextes allant des petites entreprises aux grandes organisations.</br>
     
 * ### <u><b> VirtualBox </b></u>
 
@@ -297,6 +297,8 @@ Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temp
 * **Fichier Hayabusa** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ AUDITD-CHAINSAW ➔ hayabusa_sysmon.out
 
 ## <b><u>X/ Attaques</u></b>
+
+* ### <u><b> VirtualBox Attaques </b></u>
 
 * ### <u><b> Proxmox Alertes </b></u>
   
