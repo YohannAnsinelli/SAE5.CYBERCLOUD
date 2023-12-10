@@ -113,8 +113,9 @@ Pour ce qui est du récapitulatif des heures passées sur chaque tâche, vous po
 |<center>Autid</center>       |   Yohann    |   5h    | • <u>Côté linux </u> :<br/> Installation du paquet auditd avec la mise en place d'une surveillance sur le fichier "/etc/passwd". <br/><br/>• <u>Côté Windows </u> :<br/> Activation de audit pour réaliser la surveillance du fichier log de Splunk.  |
 |<center>pfSense</center>       |    Mathéo   |   6h    |   Ajout de Firewall, WAN, LAN, VLAN's, DHCP Serveur    |
 |<center>Schéma Réseau VirtualBox</center>       |    Yohann   |   2h    |   Création rapide du schéma de notre réseau sur VirtualBox avec l'ajout de petit logo pour faciliter la compréhension de chaque machine sur le schéma.    |
-|<center>Schéma Réseau Proxmox</center>       |    Mathéo   |       |       |
-|<center>Attaques</center>       |    Mathéo - Justin   |    3h(Mathéo)   |    (Mathéo: Ajouts de Sigma's, utilisation de APT Simulator)   |
+|<center>Schéma Réseau Proxmox</center>       |    Mathéo   |   1h    |       |
+|<center>Attaques</center>       |     Justin   |      |        |
+|<center>Alertes</center>       |    Mathéo  |    3h(Mathéo)   |    (Mathéo: Ajouts de Sigma's, utilisation de APT Simulator)   |
 
 **⚠️ ATTENTION ⚠️** Les heures passées sur chaque tâches ne prennent pas en compte la rédaction des différents comptes rendus. 
     
@@ -296,6 +297,16 @@ Comme pour chainsaw on a pas pu l'utiliser plus en profondeur par manque de temp
 * **Fichier Hayabusa** : SAE5.CYBERCLOUD ➔ Installation_SIEM ➔ AUDITD-CHAINSAW ➔ hayabusa_sysmon.out
 
 ## <b><u>X/ Attaques</u></b>
+
+* ### <u><b> Proxmox Alertes </b></u>
+  
+Pour le déclenchement d'alertes, nous avons utilisé APT Simulator à partir des agents GOAD.
+
+![Alt text](Photo_SAECLOUDCYBER/apt-simulator(proxmox).png)
+
+Suite à ce déclenchement nous pouvons étudier les alertes depuis Elastic et Wazuh.
+
+_**Pour en savoir plus sur la procédure de déclanchement d'alertes ou de résolution d'erreurs, voir le compte rendu Elastic [(ici)](https://github.com/YohannAnsinelli/SAE5.CYBERCLOUD/blob/50967c96a3e9a301410d69b4aa8e74497344c21e/(Proxmox)Installation_Elastic_&_Wazuh/Installation-Elastic(Proxmox)-SAE-Balazuc-Math%C3%A9o.pdf).**_
 
 ## <b><u>XI/ Schéma Réseau</u></b>
 
