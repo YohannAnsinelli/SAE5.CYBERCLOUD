@@ -1,0 +1,142 @@
+---
+- name: Install Elastic Security
+  hosts: elastic
+  tasks:
+    - name: Clone siem repository
+      git:
+        repo: https://github.com/pushou/siem.git
+        dest: /opt/siem
+        force: yes
+      tags: [clone]
+
+    - name: Clean Siem
+      shell: make clean
+      args:
+        chdir: /opt/siem/   
+      tags: [siem]
+   
+    - name: Modify sysctl.conf
+      lineinfile:
+        path: /etc/sysctl.conf
+        line: 'vm.max_map_count=262144'
+      tags: [sysctl]
+
+    - name: Apply sysctl changes
+      shell: sysctl -p
+      tags: [sysctl]
+
+    - name: Install dependencies
+      package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - docker
+        - docker-compose
+        - jq
+      tags: [dependencies]
+
+    - name: Clone siem repository
+      git:
+        repo: https://github.com/RaliteJ/repo_script_elastic.git
+        dest: /opt/siem/repo_script_elastic
+        force: yes
+      tags: [clone]
+    
+    - name: Change Permissions
+      shell:
+        cmd: chmod +x *
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+    
+    - name: Change SIEM Build
+      shell: 
+        cmd: "./modif_make_es.sh"
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+          
+    - name: Build SIEM containers
+      shell: make es
+      args:
+        chdir: /opt/siem/   
+      tags: [siem]
+    
+    - name: Start SIEM containers
+      shell: make siem
+      args:
+        chdir: /opt/siem/
+      tags: [siem]
+
+    - name: Start Fleet containers
+      shell: make fleet
+      args:
+        chdir: /opt/siem/
+      tags: [fleet]
+
+    - name: Change Make Pass
+      shell:
+        cmd: "./modif_make_pass.sh"
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+
+    - name: Display elastic user password
+      shell: make pass
+      args:
+        chdir: /opt/siem/
+      tags: [password]
+
+    - name: copy_pass
+      shell: 
+        cmd: cat pass_elastic
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+      register: elastic_pass
+
+    - name: Create Elastic Policies DC
+      shell:
+        cmd: "./create_new_policies.sh DC {{ elastic_pass.stdout }}" 
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+    
+    - name: Get Elastic Token DC
+      shell: 
+        cmd: "./grep_enrollment_token_of_policie.sh DC {{ elastic_pass.stdout }}"
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+      register: tocken_dc
+    
+    - name: Add Integration Elastic Search DC
+      shell:
+        cmd: "./install_elastic_defend.sh DC {{ elastic_pass.stdout }}"
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+    
+    - name: Add Integration Windows DC
+      shell:
+        cmd: "./install_windows.sh DC {{ elastic_pass.stdout }}"
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+
+    - name: Create Elastic Policies SRV
+      shell:
+        cmd: "./create_new_policies.sh SRV {{ elastic_pass.stdout }}" 
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+    
+    - name: Get Elastic Token SRV
+      shell: 
+        cmd: "./grep_enrollment_token_of_policie.sh SRV {{ elastic_pass.stdout }}"
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+      register: tocken_dc
+    
+    - name: Add Integration Elastic Search SRV
+      shell:
+        cmd: "./install_elastic_defend.sh SRV {{ elastic_pass.stdout }}"
+      args:
+        chdir: /opt/siem/repo_script_elastic/
+    
+    - name: Add Integration Windows SRV
+      shell:
+        cmd: "./install_windows.sh SRV {{ elastic_pass.stdout }}"
+      args:
+        chdir: /opt/siem/repo_script_elastic/
